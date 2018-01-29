@@ -1,2 +1,2 @@
-# docalist-organization
-Type d'entité "organization" pour docalist.
+# docalist-people
+Docalist: person and organization entities.

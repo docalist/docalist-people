@@ -1,7 +1,7 @@
 {
 	"type": "wordpress-plugin",
-	"name": "docalist/docalist-organization",
-	"description": "Docalist: organization entities.",
+	"name": "docalist/docalist-people",
+	"description": "Docalist: person and organization entities.",
     "homepage": "http://docalist.org/",
 	"license": "GPL-2.0",
 
