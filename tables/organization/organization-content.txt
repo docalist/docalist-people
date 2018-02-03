@@ -1,0 +1,11 @@
+# ------------------------------------------------------------------------------
+# Organisation : contenus
+#
+# 06/01/16, DM Version initiale.
+# ------------------------------------------------------------------------------
+code;label;description
+internal;Note interne;Remarques/notes réservées à l'usage interne
+overview;Présentation;
+presentation;Présentation détaillée;
+works;Œuvres;Œuvres, travaux, publications...
+other;Autre contenu;A utiliser si aucun type ne convient.
