@@ -1,0 +1,12 @@
+# ------------------------------------------------------------------------------
+# Organisme : noms
+#
+# 06/01/16, DM Version initiale.
+# ------------------------------------------------------------------------------
+code;label;description
+usual;Nom usuel;Nom habituellement utilisé pour désigner l'organisme
+acronym;Sigle;Sigle, initiales ou acronyme
+old;Ancien nom;Nom sous lequel était précédemment connu l'organisme
+legal;Nom légal;Nom ou raison sociale (celui indiqué lors de l'immatriculation par exemple)
+commercial;Marque;Marque ou nom commercial
+other;Autre nom;
