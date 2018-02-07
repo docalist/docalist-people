@@ -12,11 +12,11 @@ namespace Docalist\People\Field\Organization;
 use Docalist\Type\TypedText;
 
 /**
- * Noms de l'organisme.
+ * Champ "name" pour les entités organization : noms de l'organisme.
  *
  * Ce champ permet d'indiquer les différents noms de la structure (nom usuel, sigle, ancien nom...)
  *
- * Chaque date comporte deux sous-champs :
+ * Chaque occurence du champ comporte deux sous-champs :
  * - `type` : type de nom,
  * - `value` : nom.
  *
@@ -25,13 +25,14 @@ use Docalist\Type\TypedText;
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
-class Name extends TypedText
+class NameField extends TypedText
 {
     public static function loadSchema()
     {
         return [
             'label' => __('Nom', 'docalist-people'),
             'description' => __('Nom ou sigle de la structure.', 'docalist-people'),
+            'repeatable' => true,
             'fields' => [
                 'type' => [
                     'table' => 'table:organization-name',
