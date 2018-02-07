@@ -1,0 +1,16 @@
+# ------------------------------------------------------------------------------
+# Organization : organismes liés.
+#
+# 07/02/18, DM : Version initiale.
+# ------------------------------------------------------------------------------
+code;label;description
+parent;"Organisation parent";
+supporting;"Structure porteuse";
+sponsor;Commanditaire;"Commanditaire, parraineur, sponsor"
+affiliation;"Organisme de rattachement";
+funder;Financeur;
+partner;Partenaire;
+managing;"Organisme gestionnaire";
+other;"Autre type de relation";
+member-of;"Membre de";
+member;"Membre";
