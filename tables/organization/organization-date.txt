@@ -1,8 +1,0 @@
-# ------------------------------------------------------------------------------
-# Organisme : date
-#
-# 06/01/16, DM Version initiale
-# ------------------------------------------------------------------------------
-code;label;description
-start;Date de création;Date de création de l'organisme 
-end;Date de fin;Date de cessation d'activités de l'organisme 
