@@ -1,0 +1,19 @@
+# ------------------------------------------------------------------------------
+# Organisation : type d'organisme
+#
+# 06/01/16, DM : Version initiale.
+# 28/01/18, DM : clean-up pour intégration dans docalist-people.
+# ------------------------------------------------------------------------------
+code;label;description
+ministry;Ministère;
+national;"Organisme national";
+regional;"Organisme régional";
+departmental;"Organisme départemental";
+authority;"Collectivité territoriale";
+parastatal;"Organisme para public";
+federation;Fédération;
+network;Réseau;
+agency;Agence;
+training;"Organisme de formation";
+opca;OPCA;"Organisme Paritaire Collecteur Agréé : organisme chargé de collecter les fonds de la formation professionnelle continue et de financer la formation des salariés."
+private;"Structure privée";
