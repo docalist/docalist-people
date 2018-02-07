@@ -9,39 +9,15 @@
  */
 namespace Docalist\People\Field\Organization;
 
-use Docalist\Type\TypedFuzzyDate;
+use Docalist\Data\Field\DateField as BaseDateField;
 
 /**
- * Dates de l'organisme.
+ * Champ "date" pour les entités organization.
  *
- * Ce champ permet d'indiquer des dates clés pour la structure (date de création, date de fin...)
- *
- * Chaque date comporte deux sous-champs :
- * - `type` : type de date,
- * - `value` : date.
- *
- * Le sous-champ type est associé à une table d'autorité qui indique les types de dates disponibles
- * ("table:organization-name" par défaut).
+ * Cette classe hérite simplement du champ standard de docalist-data et modifie les paramètres par défaut.
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
-class Date extends TypedFuzzyDate
+class DateField extends BaseDateField
 {
-    public static function loadSchema()
-    {
-        return [
-            'label' => __('Dates', 'docalist-people'),
-            'description' => __('Dates.', 'docalist-people'),
-            'fields' => [
-                'type' => [
-                    'table' => 'table:organization-date',
-                    'editor' => 'select',
-                ],
-                'value' => [
-                    'label' => __('Date', 'docalist-people'),
-                ],
-            ],
-            'default' => [['type' => 'start']],
-        ];
-    }
 }
