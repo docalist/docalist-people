@@ -9,7 +9,7 @@
  */
 namespace Docalist\People\Field\Organization;
 
-use Docalist\Data\Type\Topic as BaseTopic;
+use Docalist\Data\Field\TopicField as BaseTopicField;
 
 /**
  * Mots-clés décrivant l'organisme.
@@ -25,12 +25,17 @@ use Docalist\Data\Type\Topic as BaseTopic;
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
-class Topic extends BaseTopic
+class TopicField extends BaseTopicField
 {
     public static function loadSchema()
     {
         return [
             'description' => __('Mots-clés permettant de décrire et de classer la structure.', 'docalist-people'),
+            'fields' => [
+                'type' => [
+                    'table' => 'table:organization-topic',
+                ],
+            ],
         ];
     }
 }
