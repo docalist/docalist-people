@@ -1,0 +1,7 @@
+# ------------------------------------------------------------------------------
+# Organization : types de chiffres clés.
+#
+# 07/02/18, DM : Version initiale.
+# ------------------------------------------------------------------------------
+code;type;format;label;description
+staff;;"%s personnes";Nombre de personnes;
