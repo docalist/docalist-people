@@ -9,23 +9,16 @@
  */
 namespace Docalist\People\Field\Organization;
 
-use Docalist\Data\Field\Content as BaseContent;
+use Docalist\Data\Field\ContentField as BaseContentField;
 
 /**
- * Description de l'organisme.
+ * Champ "content" pour les entités organization.
  *
- * Ce champ permet de décrire la structure : présentation, historique, activités...
- *
- * Chaque contenu comporte deux sous-champs :
- * - `type` : type de contenu,
- * - `value` : contenu.
- *
- * Le sous-champ type est associé à une table d'autorité qui indique les types de contenu possibles
- * ("table:organization-content" par défaut).
+ * Cette classe hérite simplement du champ standard de docalist-data et modifie les paramètres par défaut.
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
-class Content extends BaseContent
+class ContentField extends BaseContentField
 {
     public static function loadSchema()
     {
