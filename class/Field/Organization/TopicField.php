@@ -21,7 +21,7 @@ use Docalist\Data\Field\TopicField as BaseTopicField;
  * - `value` : mots-clés.
  *
  * Le sous-champ type est associé à une table d'autorité qui liste les types d'indexation disponibles
- * ("table:topics" par défaut).
+ * ("table:organization-topic" par défaut).
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
