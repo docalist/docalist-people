@@ -65,7 +65,7 @@ class OrganizationEntity extends ContentEntity
     {
         $this->posttitle =
             isset($this->name) && !empty($name = $this->name->first())
-            ? $name
+            ? $name->value->getPhpValue()
             : __('(organisme sans nom)', 'docalist-people');
     }
 
