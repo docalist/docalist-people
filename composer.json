@@ -1,15 +1,15 @@
 {
 	"type": "wordpress-plugin",
 	"name": "docalist/docalist-people",
-	"description": "Docalist: person and organization entities.",
-    "homepage": "http://docalist.org/",
-	"license": "GPL-2.0",
+	"description": "Docalist : personnes et organismes.",
+    "homepage": "https://docalist.org/",
+	"license": "GPL-2.0-or-later",
 
 	"authors": [ 
         {
             "name": "Daniel Ménard",
             "email": "daniel.menard@laposte.net",
-            "homepage": "http://docalist.org/"
+            "homepage": "https://docalist.org/"
         }
     ],
 
@@ -25,5 +25,20 @@
 	"require": {
 		"composer/installers": "~1.0",
 		"php": ">=7.2"
-	}
+	},
+    "autoload" : {
+        "psr-4" : {
+            "Docalist\\People\\" : "class"
+        }
+    },
+    "config" : {
+        "sort-packages" : true,
+        "optimize-autoloader" : true,
+        "classmap-authoritative" : true
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "0.2-dev"
+        }
+    }
 }
