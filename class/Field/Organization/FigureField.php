@@ -2,7 +2,7 @@
 /**
  * This file is part of Docalist People.
  *
- * Copyright (C) 2017-2018 Daniel Ménard
+ * Copyright (C) 2017-2019 Daniel Ménard
  *
  * For copyright and license information, please view the
  * LICENSE file that was distributed with this source code.
