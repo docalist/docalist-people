@@ -1,0 +1,17 @@
+# ------------------------------------------------------------------------------
+# Personne : genre
+#
+# Inspiré de la norme ISO-5218
+# - http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip
+#
+# Discussions : 
+# - http://microformats.org/wiki/gender
+#
+# 08/12/15, DM Version initiale.
+# 03/03/16, DM Changement des codes (#103)
+# ------------------------------------------------------------------------------
+code;label;description
+female;Mme;Personne de sexe féminin
+male;M.;Personne de sexe masculin
+other;Autre;Autres cas
+unknown;Inconnu;Information inconnue / non divulguée.
