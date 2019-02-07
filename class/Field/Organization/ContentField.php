@@ -26,7 +26,7 @@ class ContentField extends BaseContentField
     {
         return [
             'label' => __('Présentation', 'docalist-people'),
-            'description' => __('Présentation de la structure, historique, activités...', 'docalist-people'),
+            'description' => __('Présentation de la structure, historique, activités, notes...', 'docalist-people'),
             'fields' => [
                 'type' => [
                     'table' => 'table:organization-content',
