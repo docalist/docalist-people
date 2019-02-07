@@ -32,15 +32,20 @@ class NameField extends TypedText
     public static function loadSchema()
     {
         return [
+            'name' => 'name',
             'label' => __('Nom', 'docalist-people'),
-            'description' => __('Nom ou sigle de la structure.', 'docalist-people'),
+            'description' => __(
+                'Noms, sigles et appellations utilisés pour désigner la structure ou l\'organisme.',
+                'docalist-people'
+            ),
             'repeatable' => true,
             'fields' => [
-                'type' => [
-                    'table' => 'table:organization-name',
-                ],
                 'value' => [
-                    'label' => __('Nom', 'docalist-people'),
+                    'label' => __('Nom ou sigle', 'docalist-people'),
+                ],
+                'type' => [
+                    'label' => __('Type de nom', 'docalist-people'),
+                    'table' => 'table:organization-name',
                 ],
             ],
             'default' => [['type' => 'usual']],
