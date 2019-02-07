@@ -25,7 +25,6 @@ class FigureField extends BaseFigureField
     public static function loadSchema()
     {
         return [
-            'name' => 'figure',
             'description' => __("Chiffres clés : effectifs, chiffre d'affaires, implantations...", 'docalist-people'),
             'fields' => [
                 'type' => [
