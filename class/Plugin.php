@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Docalist\People;
 
 use Docalist\People\Entity\OrganizationEntity;
+use Docalist\People\Entity\PersonEntity;
 
 /**
  * Plugin docalist-people.
@@ -29,6 +30,7 @@ class Plugin
         add_filter('docalist_databases_get_types', function (array $types) {
             return $types + [
                 'organization' => OrganizationEntity::class,
+                'person' => PersonEntity::class,
             ];
         });
     }
