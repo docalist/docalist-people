@@ -32,6 +32,7 @@ class OrganizationField extends TypedRelation
     public static function loadSchema()
     {
         return [
+            'name' => 'organization',
             'label' => __('Organismes liés', 'docalist-people'),
             'description' => __("Relations avec d'autres structures.", 'docalist-people'),
             'repeatable' => true,
