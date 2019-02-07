@@ -57,8 +57,7 @@ class Installer
      */
     protected function getTables()
     {
-        return $this->getTablesForOrganization();
-            // + $this->getTablesForPerson();
+        return $this->getTablesForOrganization() + $this->getTablesForPerson();
     }
 
     /**
@@ -99,6 +98,13 @@ class Installer
                 'type' => 'numbers',
                 'creation' => '2016-01-07 00:20:32',
             ],
+            'organization-person' => [
+                'path' => $dir . 'organization-person.txt',
+                'label' => __('Organisme - Personnes liées', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'roles',
+                'creation' => '2016-01-07 15:02:44',
+            ],
             'organization-relation' => [
                 'path' => $dir . 'organization-relation.txt',
                 'label' => __('Organisme - Organismes liés', 'docalist-people'),
@@ -126,6 +132,47 @@ class Installer
                 'format' => 'table',
                 'type' => 'thesaurus',
                 'creation' => '2016-01-06 23:14:51',
+            ],
+        ];
+    }
+
+    /**
+     * Tables spécifiques à l'entité Person.
+     *
+     * @return array
+     */
+    protected function getTablesForPerson()
+    {
+        $dir = DOCALIST_PEOPLE_DIR . '/tables/person/';
+
+        return [
+            'person-gender' => [
+                'path' => $dir . 'person-gender.txt',
+                'label' => __('Personne - Genre', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'person-gender',
+                'creation' => '2015-12-08 15:37:05',
+            ],
+            'person-name' => [
+                'path' => $dir . 'person-name.txt',
+                'label' => __('Personne - Nom', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'person-name',
+                'creation' => '2015-12-08 17:04:05',
+            ],
+            'person-content' => [
+                'path' => $dir . 'person-content.txt',
+                'label' => __('Personne - Contenu', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'content',
+                'creation' => '2015-12-08 17:29:19',
+            ],
+            'person-date' => [
+                'path' => $dir . 'person-date.txt',
+                'label' => __('Personne - Date', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'dates',
+                'creation' => '2016-01-06 16:13:45',
             ],
         ];
     }
