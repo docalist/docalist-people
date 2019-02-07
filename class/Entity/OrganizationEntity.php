@@ -23,6 +23,7 @@ use Docalist\People\Field\Organization\NumberField;
 use Docalist\People\Field\Organization\DateField;
 use Docalist\People\Field\Organization\FigureField;
 use Docalist\Search\MappingBuilder;
+use Docalist\People\Field\Organization\PersonField;
 
 /**
  * Un organisme, une structure ou un un groupe de personnes.
@@ -46,7 +47,7 @@ class OrganizationEntity extends ContentEntity
     {
         return [
             'name' => 'organization',
-            'label' => __('Organisme', 'docalist-people'),
+            'label' => __('Structure', 'docalist-people'),
             'description' => __('Un organisme, une structure ou un groupe de personnes.', 'docalist-people'),
             'fields' => [
                 'name'          => NameField::class,
@@ -56,6 +57,7 @@ class OrganizationEntity extends ContentEntity
                 'phone'         => PhoneField::class,
                 'link'          => LinkField::class,
                 'organization'  => OrganizationField::class,
+                'person'        => PersonField::class,
                 'number'        => NumberField::class,
                 'date'          => DateField::class,
                 'figure'        => FigureField::class,
@@ -63,11 +65,23 @@ class OrganizationEntity extends ContentEntity
         ];
     }
 
+    public function assign($value)
+    {
+        // 06/02/19 - gère la compatibilité ascendante avec le site svb
+        // dans svb, le champ "figure" s'appellait "figures"
+        if (is_array($value) && isset($value['figures'])) {
+            $value['figure'] = $value['figures'];
+            unset($value['figures']);
+        }
+
+        return parent::assign($value);
+    }
+
     protected function initPostTitle()
     {
         $this->posttitle =
-            isset($this->name) && !empty($name = $this->name->first())
-            ? $name->value->getPhpValue()
+            isset($this->name) && !empty($firstName = $this->name->first()) /** @var NameField $firstName */
+            ? $firstName->getFormattedValue(['format' => 'v'])
             : __('(organisme sans nom)', 'docalist-people');
     }
 
@@ -143,7 +157,11 @@ class OrganizationEntity extends ContentEntity
         $this->mapMultiField($document, 'link', 'url');
 
         // Address
-        // isset($this->address) && $document['geoloc-hierarchy'] = $this->mapGeolocHierarchy($this->address);
+        if (isset($this->address)) {
+            foreach ($this->address as $address) { /** @var AddressField $address */
+                $document['geoloc-hierarchy'][] = $address->value->getContinentAndCountry();
+            }
+        }
 
         // Phone
 
