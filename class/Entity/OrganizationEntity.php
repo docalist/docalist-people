@@ -44,6 +44,9 @@ use Docalist\Search\MappingBuilder;
  */
 class OrganizationEntity extends ContentEntity
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function loadSchema()
     {
         return [
@@ -66,6 +69,9 @@ class OrganizationEntity extends ContentEntity
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function assign($value)
     {
         // 06/02/19 - gère la compatibilité ascendante avec le site svb
@@ -78,6 +84,9 @@ class OrganizationEntity extends ContentEntity
         return parent::assign($value);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function initPostTitle()
     {
         $this->posttitle =
@@ -86,6 +95,9 @@ class OrganizationEntity extends ContentEntity
             : __('(organisme sans nom)', 'docalist-people');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public static function getEditGrid()
     {
         $builder = new EditGridBuilder(self::class);
@@ -130,6 +142,9 @@ class OrganizationEntity extends ContentEntity
         return $builder->getGrid();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function buildMapping(MappingBuilder $mapping)
     {
         // Le mapping des champs de base est construit par la classe parent
@@ -185,6 +200,9 @@ class OrganizationEntity extends ContentEntity
         return $mapping;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function map()
     {
         // Le mapping des champs de base est fait par la classe parent
