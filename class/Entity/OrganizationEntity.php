@@ -19,11 +19,12 @@ use Docalist\People\Field\Organization\AddressField;
 use Docalist\People\Field\Organization\PhoneField;
 use Docalist\People\Field\Organization\LinkField;
 use Docalist\People\Field\Organization\OrganizationField;
+use Docalist\People\Field\Organization\PersonField;
 use Docalist\People\Field\Organization\NumberField;
 use Docalist\People\Field\Organization\DateField;
 use Docalist\People\Field\Organization\FigureField;
+use Docalist\Data\GridBuilder\EditGridBuilder;
 use Docalist\Search\MappingBuilder;
-use Docalist\People\Field\Organization\PersonField;
 
 /**
  * Un organisme, une structure ou un un groupe de personnes.
@@ -83,6 +84,50 @@ class OrganizationEntity extends ContentEntity
             isset($this->name) && !empty($firstName = $this->name->first()) /** @var NameField $firstName */
             ? $firstName->getFormattedValue(['format' => 'v'])
             : __('(organisme sans nom)', 'docalist-people');
+    }
+
+    public static function getEditGrid()
+    {
+        $builder = new EditGridBuilder(self::class);
+
+        $builder->setProperty('stylesheet', 'docalist-people-edit-organization');
+
+        $builder->addGroup(
+            __('Présentation de la structure', 'docalist-people'),
+            'name,content,topic'
+        );
+        $builder->addGroup(
+            __('Coordonnées', 'docalist-people'),
+            'address,phone,link'
+        );
+        $builder->addGroup(
+            __('Relations', 'docalist-people'),
+            'organization,person'
+        );
+        $builder->addGroup(
+            __('Numéros, dates et chiffres clés', 'docalist-people'),
+            'number,date,figure'
+        );
+        $builder->addGroup(
+            __('Informations de gestion', 'docalist-people'),
+            'type,ref,source',
+            'collapsed'
+        );
+
+        $builder->setDefaultValues([
+            'name'          => [ ['type' => 'usual'], ['type' => 'acronym'] ],
+            'content'       => [ ['type' => 'overview'] ],
+            'address'       => [ ['type' => 'main'] ],
+            'phone'         => [ ['type' => 'management'], ['type' => 'commercial'], ['type' => 'contact'] ],
+            'link'          => [ ['type' => 'mail'], ['type' => 'site'], ['type' => 'facebook'] ],
+            'organization'  => [ ['type' => 'affiliation'], ['type' => 'member-of'], ['type' => 'partner'] ],
+            'person'        => [ ['type' => 'management'], ['type' => 'webmaster'], ['type' => 'contact'] ],
+            'number'        => [ ['type' => 'siren'], ['type' => 'siret'], ['type' => 'ape'], ['type' => 'tva'] ],
+            'date'          => [ ['type' => 'start'] ],
+            'figure'        => [ ['type' => 'staff'] ],
+        ]);
+
+        return $builder->getGrid();
     }
 
     protected function buildMapping(MappingBuilder $mapping)
