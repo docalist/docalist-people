@@ -58,7 +58,6 @@ class NameField extends MultiField
                     'editor' => 'select',
                 ],
             ],
-            'default' => [['type' => 'usual']],
         ];
     }
 
