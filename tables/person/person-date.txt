@@ -1,8 +1,0 @@
-# ------------------------------------------------------------------------------
-# Personne : date
-#
-# 06/01/16, DM Version initiale (depuis la table biblio).
-# ------------------------------------------------------------------------------
-code;label;description
-birth;Date de naissance;Date de naissance d'une personne. 
-death;Date de décès;Date de décès d'une personne.
