@@ -31,7 +31,6 @@ class FigureField extends BaseFigureField
                     'table' => 'table:organization-figure',
                 ],
             ],
-            'default' => [['type' => 'staff']],
         ];
     }
 }
