@@ -31,7 +31,6 @@ class NumberField extends BaseNumberField
                     'table' => 'table:organization-number',
                 ],
             ],
-            'default' => [['type' => 'siret']],
         ];
     }
 }
