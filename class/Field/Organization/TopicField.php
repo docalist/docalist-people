@@ -33,11 +33,6 @@ class TopicField extends BaseTopicField
     {
         return [
             'description' => __('Mots-clés permettant de décrire et de classer la structure.', 'docalist-people'),
-            'fields' => [
-                'type' => [
-                    'table' => 'table:organization-topic',
-                ],
-            ],
         ];
     }
 }
