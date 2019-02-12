@@ -32,7 +32,6 @@ class ContentField extends BaseContentField
                     'table' => 'table:organization-content',
                 ],
             ],
-            'default' => [['type' => 'overview']],
             'editor' => 'integrated',
         ];
     }
