@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------------------
+# Type de noms (organisme, personne, lieu...)
+#
+# 06/01/16, DM Version initiale.
+# 12/02/19, DM Ajout d'entrées génériques.
+# ------------------------------------------------------------------------------
+code;label;description
+acronym;Sigle;Sigle, initiales ou acronyme.
+birth;Nom de naissance; Né(e) xxx
+commercial;Marque;Marque ou nom commercial.
+legal;Nom légal;Nom légal enregistré auptès de l'administration.
+nickname;Surnom;Surnom (souvent dérivé du nom réel). Exemple : "Jimmy Carter" pour "James Earl Carter".
+old;Ancien nom;Nom utilisé précédemment.
+other;Autre nom;Tout autre type de nom qui ne figure pas dans la liste.
+pseudonym;Pseudonyme;Nom d'emprunt (nom de plume, nom de scène, etc.). Exemples : Hergé, Georges Sand.
+subtitle;Sous-titre;Complément du titre ou tagline attribué à une œuvre (un spectacle, une peinture, un ouvrage...)
+title;Titre;Type de nom à utiliser pour une œuvre (un spectacle, une peinture, un ouvrage...)
+usual;Nom usuel;Nom le plus souvent utilisé.
