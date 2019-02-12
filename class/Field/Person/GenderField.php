@@ -30,7 +30,6 @@ class GenderField extends TableEntry
             'label' => __('Genre', 'docalist-people'),
             'description' => __('Genre de la personne.', 'docalist-people'),
             'table' => 'table:person-gender',
-            'default' => 'female',
             'editor' => 'radio-inline',
         ];
     }
