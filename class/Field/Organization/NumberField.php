@@ -26,11 +26,6 @@ class NumberField extends BaseNumberField
     {
         return [
             'description' => __('Numéros et codes de la structure (SIRET, APE, licence...)', 'docalist-people'),
-            'fields' => [
-                'type' => [
-                    'table' => 'table:organization-number',
-                ],
-            ],
         ];
     }
 }
