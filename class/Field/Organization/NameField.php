@@ -42,7 +42,7 @@ class NameField extends TypedText
             'fields' => [
                 'type' => [
                     'label' => __('Type de nom', 'docalist-people'),
-                    'table' => 'table:organization-name',
+                    'table' => 'table:name-type',
                 ],
                 'value' => [
                     'label' => __('Nom ou sigle', 'docalist-people'),

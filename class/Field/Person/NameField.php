@@ -52,7 +52,7 @@ class NameField extends MultiField
                 ],
                 'type' => [
                     'type' => TableEntry::class,
-                    'table' => 'table:person-name',
+                    'table' => 'table:name-type',
                     'label' => __('Précision', 'docalist-people'),
                     'description' => __('Type du nom.', 'docalist-people'),
                     'editor' => 'select',
