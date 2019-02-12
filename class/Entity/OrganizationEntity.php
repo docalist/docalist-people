@@ -129,7 +129,7 @@ class OrganizationEntity extends ContentEntity
         $builder->setDefaultValues([
             'name'          => [ ['type' => 'usual'], ['type' => 'acronym'] ],
             'content'       => [ ['type' => 'overview'] ],
-            'address'       => [ ['type' => 'main'] ],
+            'address'       => [ ['type' => 'main', 'value' => ['country' => 'FR']] ],
             'phone'         => [ ['type' => 'management'], ['type' => 'commercial'], ['type' => 'contact'] ],
             'link'          => [ ['type' => 'mail'], ['type' => 'site'], ['type' => 'facebook'] ],
             'organization'  => [ ['type' => 'affiliation'], ['type' => 'member-of'], ['type' => 'partner'] ],
