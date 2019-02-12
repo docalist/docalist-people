@@ -37,13 +37,13 @@ class PersonField extends TypedRelation
             'description' => __('Personnes liées à cet organisme.', 'docalist-people'),
             'repeatable' => true,
             'fields' => [
-                'value' => [
-                    'label' => __('Personne liée', 'docalist-people'),
-                    'relfilter' => 'type:person',
-                ],
                 'type' => [
                     'label' => __('Rôle / fonction', 'docalist-people'),
                     'table' => 'table:organization-person',
+                ],
+                'value' => [
+                    'label' => __('Personne liée', 'docalist-people'),
+                    'relfilter' => 'type:person',
                 ],
             ],
         ];
