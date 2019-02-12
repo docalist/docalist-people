@@ -30,7 +30,6 @@ class DateField extends BaseDateField
                     'table' => 'table:person-date',
                 ],
             ],
-            'default' => [['type' => 'birth']],
         ];
     }
 }
