@@ -40,15 +40,14 @@ class NameField extends TypedText
             ),
             'repeatable' => true,
             'fields' => [
-                'value' => [
-                    'label' => __('Nom ou sigle', 'docalist-people'),
-                ],
                 'type' => [
                     'label' => __('Type de nom', 'docalist-people'),
                     'table' => 'table:organization-name',
                 ],
+                'value' => [
+                    'label' => __('Nom ou sigle', 'docalist-people'),
+                ],
             ],
-            'default' => [['type' => 'usual']],
         ];
     }
 }
