@@ -26,11 +26,6 @@ class FigureField extends BaseFigureField
     {
         return [
             'description' => __("Chiffres clés : effectifs, chiffre d'affaires, implantations...", 'docalist-people'),
-            'fields' => [
-                'type' => [
-                    'table' => 'table:organization-figure',
-                ],
-            ],
         ];
     }
 }
