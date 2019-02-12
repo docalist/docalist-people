@@ -27,16 +27,6 @@ class ContentField extends BaseContentField
         return [
             'label' => __('Contenus', 'docalist-people'),
             'description' => __('Présentation, biographie, travaux...', 'docalist-people'),
-            'fields' => [
-                'type' => [
-                    'table' => 'table:person-content',
-                ],
-                'value' => [
-                    'editor' => 'wpeditor-teeny',
-                ],
-            ],
-            'default' => [['type' => 'bio']],
-            'editor' => 'integrated',
         ];
     }
 }
