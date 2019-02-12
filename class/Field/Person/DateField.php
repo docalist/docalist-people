@@ -22,14 +22,4 @@ use Docalist\Data\Field\DateField as BaseDateField;
  */
 class DateField extends BaseDateField
 {
-    public static function loadSchema()
-    {
-        return [
-            'fields' => [
-                'type' => [
-                    'table' => 'table:person-date',
-                ],
-            ],
-        ];
-    }
 }
