@@ -38,6 +38,9 @@ use Docalist\Search\MappingBuilder;
  */
 class PersonEntity extends ContentEntity
 {
+    /**
+     * {@inheritDoc}
+     */
     public static function loadSchema()
     {
         return [
@@ -57,6 +60,9 @@ class PersonEntity extends ContentEntity
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function initPostTitle()
     {
         $this->posttitle =
@@ -65,6 +71,9 @@ class PersonEntity extends ContentEntity
             : __('(personne sans nom)', 'docalist-people');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function buildMapping(MappingBuilder $mapping)
     {
         // Le mapping des champs de base est construit par la classe parent
@@ -105,6 +114,9 @@ class PersonEntity extends ContentEntity
         return $mapping;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function map()
     {
         // Le mapping des champs de base est fait par la classe parent
