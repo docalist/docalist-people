@@ -5,13 +5,13 @@
 # 06/02/19, DM Révision pour intégration dans docalist--people
 # ------------------------------------------------------------------------------
 code;label;description
-chairman;Président du CA;Président du conseil d'administration
-board-member;Membre du CA;Membre du Conseil d'administration
-management;Direction;Dirigeant(e) ou membre de l'équipe de direction
-administration;Contact administratif;Personne à contacter pour les aspects administratifs
-commercial;Contact commercial;Personne à contacter pour les aspects commerciaux
-communication;Responsable communication;Personne en charge de l'information et de la communication
-webmaster;Webmestre;Personne responsable du site internet
-contact;Contact;Personne à contacter
-member;"Membre";Membre de la structure (membre du groupe, adhérent de l'association...)
-other;Autre rôle;
+chairman;"Président du CA";"Personne qui préside le conseil d'administration."
+board-member;"Membre du CA";"Personne qui est membre du Conseil d'administration."
+management;"Direction";"Personne qui dirige la structure ou qui est membre de l'équipe de direction."
+administration;"Contact administratif";"Personne à contacter pour les aspects administratifs."
+commercial;"Contact commercial";"Personne à contacter pour les aspects commerciaux."
+communication;"Responsable communication";"Personne en charge de l'information et de la communication."
+webmaster;"Webmestre";"Personne responsable du site internet."
+contact;"Contact";"Personne à contacter."
+member;"Membre";"Personne qui fait partie de la structure cataloguée (membre du groupe, adhérent de l'association...)"
+other;"Autre rôle";"Autre type de relation entre la structure cataloguée et une personne."
