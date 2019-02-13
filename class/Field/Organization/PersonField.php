@@ -39,7 +39,7 @@ class PersonField extends TypedRelation
             'fields' => [
                 'type' => [
                     'label' => __('Rôle / fonction', 'docalist-people'),
-                    'table' => 'table:organization-person',
+                    'table' => 'table:org-person-relation',
                 ],
                 'value' => [
                     'label' => __('Personne liée', 'docalist-people'),
