@@ -23,7 +23,7 @@ use Docalist\Data\Type\TypedRelation;
  * - `value` : Post ID de la personne liée.
  *
  * Le sous-champ type est associé à une table d'autorité qui indique les types de relations disponibles
- * ("table:person-relation" par défaut).
+ * ("table:org-person-relation" par défaut).
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
