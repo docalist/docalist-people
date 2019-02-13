@@ -2,15 +2,15 @@
 # Organization : organismes liés.
 #
 # 07/02/18, DM : Version initiale.
+# 13/02/19, DM : Revoit les libellés et ajoute des définitions.
 # ------------------------------------------------------------------------------
 code;label;description
-parent;"Organisation parent";
-supporting;"Structure porteuse";
-sponsor;Commanditaire;"Commanditaire, parraineur, sponsor"
-affiliation;"Organisme de rattachement";
-funder;Financeur;
-partner;Partenaire;
-managing;"Organisme gestionnaire";
-other;"Autre type de relation";
-member-of;"Membre de";
-member;"Membre";
+parent;"Structure parent";"Une structure plus large dont fait partie la structure cataloguée."
+supporting;"Structure porteuse";"Une structure, souvent publique ou associative, qui pilote l'activité ou les projets de la structure cataloguée." 
+sponsor;Sponsor;"Une structure qui apporte à la structure cataloguée un soutien financier ou technique à visée commerciale ou à des fins d'image (commanditaire, parrain...)"
+affiliation;"Organisme de rattachement";"Une structure ou un organisme auquel est affiliée la structure cataloguée ou dont elle dépend administrativement ou juridiquement."
+funder;Financeur;"Une structure qui apporte tout ou partie du financement nécessaire à l'activité ou aux projets de la structure cataloguée." 
+partner;Partenaire;"Une structure qui travaille de concert avec l'entité cataloguée pour mener à bien un ou plusieurs projets."
+managing;"Organisme gestionnaire";"Un organisme en charge de la gestion administrative et/ou financière de la structure cataloguée."
+member-of;"Membre de";"Une structure (un réseau, une fédération, un club...) dont fait partie ou à laquelle adhère la structure cataloguée."
+other;"Autre type de relation";"Tout type de relation entre la structure cataloguée et une autre structure."
