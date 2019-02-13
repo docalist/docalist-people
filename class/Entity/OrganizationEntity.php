@@ -36,6 +36,7 @@ use Docalist\Search\MappingBuilder;
  * @property PhoneField[]           $phone          Numéros de téléphone
  * @property LinkField[]            $link           Liens
  * @property OrganizationField[]    $organization   Organismes liés.
+ * @property PersonField[]          $person         Personnes liées.
  * @property NumberField[]          $number         Numéros officiels.
  * @property DateField[]            $date           Dates.
  * @property FigureField[]          $figure         Chiffres clés.
