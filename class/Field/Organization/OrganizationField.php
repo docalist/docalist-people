@@ -38,7 +38,7 @@ class OrganizationField extends TypedRelation
             'repeatable' => true,
             'fields' => [
                 'type' => [
-                    'table' => 'table:organization-relation',
+                    'table' => 'table:org-org-relation',
                 ],
                 'value' => [
                     'label' => __('Structure liée', 'docalist-people'),
