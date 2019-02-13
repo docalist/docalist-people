@@ -62,7 +62,7 @@ add_action('plugins_loaded', function () {
                 printf(
                     '<div class="%s"><p><b>%s</b> has been deactivated because it requires <b>%s</b>.</p></div>',
                     'notice notice-error is-dismissible',
-                    'Docalist Organization',
+                    'Docalist People',
                     ucwords(strtolower(strtr($dependency, '_', ' ')))
                 );
             });
