@@ -8,7 +8,7 @@ code;label;description
 acronym;Sigle;Sigle, initiales ou acronyme.
 birth;Nom de naissance; Né(e) xxx
 commercial;Marque;Marque ou nom commercial.
-legal;Nom légal;Nom légal enregistré auptès de l'administration.
+legal;Nom légal;Nom légal enregistré auprès de l'administration.
 nickname;Surnom;Surnom (souvent dérivé du nom réel). Exemple : "Jimmy Carter" pour "James Earl Carter".
 old;Ancien nom;Nom utilisé précédemment.
 other;Autre nom;Tout autre type de nom qui ne figure pas dans la liste.
