@@ -9,7 +9,7 @@
  *
  * Plugin Name: Docalist People
  * Plugin URI:  http://docalist.org/
- * Description: Docalist: person and organization entities.
+ * Description: Entités "organization", "place" et "person" pour docalist.
  * Version:     0.3.0
  * Author:      Daniel Ménard
  * Author URI:  http://docalist.org/
