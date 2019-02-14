@@ -14,25 +14,32 @@ namespace Docalist\People\Entity;
 use Docalist\Data\Entity\ContentEntity;
 use Docalist\People\Field\Person\GenderField;
 use Docalist\People\Field\Person\NameField;
+use Docalist\People\Field\Person\DateField;
 use Docalist\People\Field\Person\ContentField;
 use Docalist\People\Field\Person\TopicField;
-use Docalist\People\Field\Person\LinkField;
-use Docalist\People\Field\Person\PhoneField;
-use Docalist\People\Field\Person\DateField;
 use Docalist\People\Field\Person\AddressField;
+use Docalist\People\Field\Person\PhoneField;
+use Docalist\People\Field\Person\LinkField;
+use Docalist\People\Field\Person\PersonField;
+use Docalist\People\Field\Person\NumberField;
+use Docalist\People\Field\Person\FigureField;
+use Docalist\Data\GridBuilder\EditGridBuilder;
 use Docalist\Search\MappingBuilder;
 
 /**
  * Une personne physique.
  *
  * @property GenderField        $gender     Genre / sexe de la personne.
- * @property NameField[]        $name       Nom de la personne.
- * @property ContentField[]     $content    Contenus : présentation, biographie, travaux...
- * @property LinkField[]        $link       Liens.
- * @property PhoneField[]       $phone      Numéros de téléphone.
+ * @property NameField[]        $name       Noms de la personne.
  * @property DateField[]        $date       Dates.
- * @property AddressField[]     $address    Adresses postales.
+ * @property ContentField[]     $content    Contenus : présentation, biographie, travaux...
  * @property TopicField[]       $topic      Mots-clés.
+ * @property AddressField[]     $address    Adresses postales.
+ * @property PhoneField[]       $phone      Numéros de téléphone.
+ * @property LinkField[]        $link       Liens.
+ * @property PersonField[]      $person     Personnes liées.
+ * @property NumberField[]      $number     Numéros officiels.
+ * @property FigureField[]      $figure     Chiffres clés.
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
@@ -50,12 +57,16 @@ class PersonEntity extends ContentEntity
             'fields' => [
                 'gender'    => GenderField::class,
                 'name'      => NameField::class,
-                'content'   => ContentField::class,
-                'link'      => LinkField::class,
-                'phone'     => PhoneField::class,
                 'date'      => DateField::class,
-                'address'   => AddressField::class,
+                'content'   => ContentField::class,
                 'topic'     => TopicField::class,
+                'address'   => AddressField::class,
+                'phone'     => PhoneField::class,
+                'link'      => LinkField::class,
+                // structures liées
+                'person'    => PersonField::class,
+                'number'    => NumberField::class,
+                'figure'    => FigureField::class,
             ],
         ];
     }
@@ -69,6 +80,58 @@ class PersonEntity extends ContentEntity
             isset($this->name) && !empty($firstName = $this->name->first()) /** @var NameField $firstName */
             ? $firstName->getFormattedValue(['format' => 'f n'])
             : __('(personne sans nom)', 'docalist-people');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public static function getEditGrid()
+    {
+        $builder = new EditGridBuilder(self::class);
+
+        $builder->setProperty('stylesheet', 'docalist-people-edit-person');
+
+        $builder->addGroup(
+            __('Identité de la personne', 'docalist-people'),
+            'gender,name,date'
+        );
+        $builder->addGroup(
+            __('Présentation de la personne', 'docalist-people'),
+            'content,topic'
+        );
+        $builder->addGroup(
+            __('Coordonnées', 'docalist-people'),
+            'address,phone,link'
+        );
+        $builder->addGroup(
+            __('Relations', 'docalist-people'),
+            'person'
+        );
+        $builder->addGroup(
+            __('Numéros et chiffres clés', 'docalist-people'),
+            'number,figure'
+        );
+        $builder->addGroup(
+            __('Informations de gestion', 'docalist-people'),
+            'type,ref,source',
+            'collapsed'
+        );
+
+        $builder->setDefaultValues([
+            'gender'        => 'unknown',
+            'name'          => [ ['type' => 'usual'], ['type' => 'birth'], ['type' => 'pseudonym'] ],
+            'date'          => [ ['type' => 'birth'] ],
+            'content'       => [ ['type' => 'overview'] ],
+            'address'       => [ ['type' => 'main', 'value' => ['country' => 'FR']] ],
+            'phone'         => [ ['type' => 'mobile'], ['type' => 'work'], ['type' => 'home'] ],
+            'link'          => [ ['type' => 'mail'], ['type' => 'facebook'], ['type' => 'twitter'] ],
+         // 'organization'  => [ ['type' => 'affiliation'], ['type' => 'member-of'], ['type' => 'partner'] ],
+            'person'        => [ ['type' => 'friend'] ],
+            'number'        => [ ['type' => 'other'] ],
+            'figure'        => [  ],
+        ]);
+
+        return $builder->getGrid();
     }
 
     /**
