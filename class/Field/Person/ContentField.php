@@ -25,7 +25,7 @@ class ContentField extends BaseContentField
     public static function loadSchema()
     {
         return [
-            'label' => __('Contenus', 'docalist-people'),
+            'label' => __('Présentation', 'docalist-people'),
             'description' => __('Présentation, biographie, travaux...', 'docalist-people'),
         ];
     }
