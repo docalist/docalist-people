@@ -1,2 +1,2 @@
 # docalist-people
-Docalist: person and organization entities.
+Entités "organization", "place" et "person" pour docalist.
