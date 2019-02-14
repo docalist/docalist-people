@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------------------
+# Rôle/fonction d'une personne au sein d'une structure ou d'un organisme.
+#
+# 07/01/16, DM Version initiale, inspirée de  
+# https://nationbuilder.com/relationships_between_people_and_organizations
+# ------------------------------------------------------------------------------
+code;label;description
+parent;"Parent";"Père ou mère de la personne cataloguée."
+child;"Enfant";"Enfant de la personne cataloguée."
+sibling;"Fratrie";"Frère ou soeur de la personne cataloguée."
+spouse;"Conjoint";"Époux, épouse ou conjoint de la personne cataloguée."
+friend;"Ami/amie";"Une personne qui figure dans le cercle d'amis de la personne cataloguée."
+partner;"Partenaire";"Partenaire de la personne cataloguée."
+student;"Élève";"Élève ou étudiant de la personne cataloguée."
+teacher;"Professeur";"Professeur de la personne cataloguée."
+manager;"Manager";"Supérieur hiérarchique, superviseur ou manager de la personne cataloguée."
+subordinate;"Subalterne";"Personne qui travaille sous l'autorité de la personne cataloguée."
+other;"Autre relation";"Autre type de relation entre la personne cataloguée et une autre personne."
