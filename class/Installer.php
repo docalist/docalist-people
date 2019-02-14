@@ -57,7 +57,27 @@ class Installer
      */
     protected function getTables()
     {
-        return $this->getTablesForOrganization() + $this->getTablesForPerson();
+        return $this->getCommonTables() + $this->getTablesForOrganization() + $this->getTablesForPerson();
+    }
+
+    /**
+     * Tables communes à différents types d'entités.
+     *
+     * @return array
+     */
+    protected function getCommonTables()
+    {
+        $dir = DOCALIST_PEOPLE_DIR . '/tables/';
+
+        return [
+            'name-type' => [
+                'path' => $dir . 'name-type.txt',
+                'label' => __('Nom - Exemple de table "types de noms"', 'docalist-people'),
+                'format' => 'table',
+                'type' => 'name-type',
+                'creation' => '2015-12-08 17:04:05',
+            ],
+        ];
     }
 
     /**
@@ -70,68 +90,19 @@ class Installer
         $dir = DOCALIST_PEOPLE_DIR . '/tables/organization/';
 
         return [
-            'organization-content' => [
-                'path' => $dir . 'organization-content.txt',
-                'label' => __('Organisme - Contenus', 'docalist-people'),
+            'org-person-relation' => [
+                'path' => $dir . 'org-person-relation.txt',
+                'label' => __('Structure - Relations avec des personnes', 'docalist-people'),
                 'format' => 'table',
-                'type' => 'content',
-                'creation' => '2016-01-06 22:05:12',
-            ],
-            'organization-figure' => [
-                'path' => $dir . 'organization-figure.txt',
-                'label' => __('Organisme - Chiffres clés', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'figures',
-                'creation' => '2016-02-22 14:57:49',
-            ],
-            'organization-name' => [
-                'path' => $dir . 'organization-name.txt',
-                'label' => __('Organisme - Noms', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'organization-name',
-                'creation' => '2016-06-01 21:50:36',
-            ],
-            'organization-number' => [
-                'path' => $dir . 'organization-number.txt',
-                'label' => __('Organisme - Numéros', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'numbers',
-                'creation' => '2016-01-07 00:20:32',
-            ],
-            'organization-person' => [
-                'path' => $dir . 'organization-person.txt',
-                'label' => __('Organisme - Personnes liées', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'roles',
+                'type' => 'relation-type',
                 'creation' => '2016-01-07 15:02:44',
             ],
-            'organization-relation' => [
-                'path' => $dir . 'organization-relation.txt',
-                'label' => __('Organisme - Organismes liés', 'docalist-people'),
+            'org-org-relation' => [
+                'path' => $dir . 'org-org-relation.txt',
+                'label' => __("Structure - Relations avec d'autres structures", 'docalist-people'),
                 'format' => 'table',
-                'type' => 'relations',
+                'type' => 'relation-type',
                 'creation' => '2016-01-07 14:29:43',
-            ],
-            'organization-status' => [ // type d'indexation pour topic
-                'path' => $dir . 'organization-status.txt',
-                'label' => __('Organisme - Statut légal', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'thesaurus',
-                'creation' => '2016-01-06 23:14:51',
-            ],
-            'organization-topic' => [
-                'path' => $dir . 'organization-topic.txt',
-                'label' => __('Organisme - Indexation', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'topics',
-                'creation' => '2016-01-06 22:10:51',
-            ],
-            'organization-type' => [ // type d'indexation pour topic
-                'path' => $dir . 'organization-type.txt',
-                'label' => __('Organisme - Types', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'thesaurus',
-                'creation' => '2016-01-06 23:14:51',
             ],
         ];
     }
@@ -153,26 +124,12 @@ class Installer
                 'type' => 'person-gender',
                 'creation' => '2015-12-08 15:37:05',
             ],
-            'person-name' => [
-                'path' => $dir . 'person-name.txt',
-                'label' => __('Personne - Nom', 'docalist-people'),
+            'person-person-relation' => [
+                'path' => $dir . 'person-person-relation.txt',
+                'label' => __("Personne - Relations avec d'autres personnes", 'docalist-people'),
                 'format' => 'table',
-                'type' => 'person-name',
-                'creation' => '2015-12-08 17:04:05',
-            ],
-            'person-content' => [
-                'path' => $dir . 'person-content.txt',
-                'label' => __('Personne - Contenu', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'content',
-                'creation' => '2015-12-08 17:29:19',
-            ],
-            'person-date' => [
-                'path' => $dir . 'person-date.txt',
-                'label' => __('Personne - Date', 'docalist-people'),
-                'format' => 'table',
-                'type' => 'dates',
-                'creation' => '2016-01-06 16:13:45',
+                'type' => 'relation-type',
+                'creation' => '2016-01-07 15:02:44',
             ],
         ];
     }
