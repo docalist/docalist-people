@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Docalist\People;
 
 use Docalist\People\Entity\OrganizationEntity;
+use Docalist\People\Entity\PlaceEntity;
 use Docalist\People\Entity\PersonEntity;
 
 /**
@@ -26,10 +27,14 @@ class Plugin
      */
     public function __construct()
     {
+        // Déclare nos assets
+        require_once dirname(__DIR__) . '/assets/register.php';
+
         // Déclare les entités définies dans ce plugin
         add_filter('docalist_databases_get_types', function (array $types) {
             return $types + [
                 'organization' => OrganizationEntity::class,
+                'place' => PlaceEntity::class,
                 'person' => PersonEntity::class,
             ];
         });
