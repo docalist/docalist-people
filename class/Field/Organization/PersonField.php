@@ -32,7 +32,7 @@ class PersonField extends TypedRelation
     public static function loadSchema()
     {
         return [
-            'name' => 'organization',
+            'name' => 'person',
             'label' => __('Personnes liées', 'docalist-people'),
             'description' => __('Personnes liées à cet organisme.', 'docalist-people'),
             'repeatable' => true,
