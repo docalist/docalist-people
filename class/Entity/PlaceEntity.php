@@ -102,27 +102,13 @@ class PlaceEntity extends OrganizationEntity
 
         $builder->setProperty('stylesheet', 'docalist-people-edit-organization');
 
-        $builder->addGroup(
-            __('Présentation du lieu', 'docalist-people'),
-            'name,content,topic'
-        );
-        $builder->addGroup(
-            __('Coordonnées', 'docalist-people'),
-            'address,phone,link'
-            );
-        $builder->addGroup(
-            __('Relations', 'docalist-people'),
-            'organization,person'
-        );
-        $builder->addGroup(
-            __('Numéros, dates et chiffres clés', 'docalist-people'),
-            'number,date,figure'
-            );
-        $builder->addGroup(
-            __('Informations de gestion', 'docalist-people'),
-            'type,ref,source',
-            'collapsed'
-        );
+        $builder->addGroups([
+            __('Présentation du lieu', 'docalist-people')               => 'name,content,topic',
+            __('Coordonnées', 'docalist-people')                        => 'address,phone,link',
+            __('Relations', 'docalist-people')                          => 'organization,person',
+            __('Numéros, dates et chiffres clés', 'docalist-people')    => 'number,date,figure',
+            __('Informations de gestion', 'docalist-people')            => '-type,ref,source',
+        ]);
 
         $builder->setDefaultValues([
             'name'          => [ ['type' => 'usual'], ['type' => 'acronym'] ],
