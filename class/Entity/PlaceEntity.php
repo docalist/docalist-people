@@ -85,6 +85,17 @@ class PlaceEntity extends OrganizationEntity
     /**
      * {@inheritDoc}
      */
+    protected function initPostTitle()
+    {
+        $this->posttitle =
+            isset($this->name) && !empty($firstName = $this->name->first()) /** @var NameField $firstName */
+            ? $firstName->getFormattedValue(['format' => 'v'])
+            : __('(lieu sans nom)', 'docalist-people');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public static function getEditGrid()
     {
         $builder = new EditGridBuilder(self::class);
