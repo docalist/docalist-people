@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Docalist\People\Entity;
 
 use Docalist\Data\Entity\ContentEntity;
+
 use Docalist\People\Field\Organization\NameField;
 use Docalist\People\Field\Organization\ContentField;
 use Docalist\People\Field\Organization\TopicField;
@@ -23,23 +24,28 @@ use Docalist\People\Field\Organization\PersonField;
 use Docalist\People\Field\Organization\NumberField;
 use Docalist\People\Field\Organization\DateField;
 use Docalist\People\Field\Organization\FigureField;
+
+use Docalist\Type\Collection\TypedValueCollection;
+use Docalist\Data\Type\Collection\TopicCollection;
+use Docalist\Type\Collection\MultiFieldCollection;
+
 use Docalist\Data\GridBuilder\EditGridBuilder;
 use Docalist\Search\MappingBuilder;
 
 /**
  * Un organisme, une structure ou un un groupe de personnes.
  *
- * @property NameField[]            $name           Noms.
- * @property ContentField[]         $content        Présentation.
- * @property TopicField[]           $topic          Mots-clés.
- * @property AddressField[]         $address        Adresses postales
- * @property PhoneField[]           $phone          Numéros de téléphone
- * @property LinkField[]            $link           Liens
- * @property OrganizationField[]    $organization   Organismes liés.
- * @property PersonField[]          $person         Personnes liées.
- * @property NumberField[]          $number         Numéros officiels.
- * @property DateField[]            $date           Dates.
- * @property FigureField[]          $figure         Chiffres clés.
+ * @property TypedValueCollection       $name           Noms.
+ * @property TypedValueCollection       $content        Présentation.
+ * @property TopicCollection            $topic          Mots-clés.
+ * @property TypedValueCollection       $address        Adresses postales
+ * @property TypedValueCollection       $phone          Numéros de téléphone
+ * @property MultiFieldCollection       $link           Liens
+ * @property TypedRelationCollection    $organization   Organismes liés.
+ * @property TypedRelationCollection    $person         Personnes liées.
+ * @property TypedValueCollection       $number         Numéros officiels.
+ * @property TypedValueCollection       $date           Dates.
+ * @property TypedValueCollection       $figure         Chiffres clés.
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */

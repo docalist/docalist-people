@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Docalist\People\Entity;
 
 use Docalist\Data\Entity\ContentEntity;
+
 use Docalist\People\Field\Person\GenderField;
 use Docalist\People\Field\Person\NameField;
 use Docalist\People\Field\Person\DateField;
@@ -23,23 +24,30 @@ use Docalist\People\Field\Person\LinkField;
 use Docalist\People\Field\Person\PersonField;
 use Docalist\People\Field\Person\NumberField;
 use Docalist\People\Field\Person\FigureField;
+
+use Docalist\Type\Collection;
+use Docalist\Type\Collection\MultiFieldCollection;
+use Docalist\Type\Collection\TypedValueCollection;
+use Docalist\Data\Type\Collection\TopicCollection;
+use Docalist\Data\Type\Collection\TypedRelationCollection;
+
 use Docalist\Data\GridBuilder\EditGridBuilder;
 use Docalist\Search\MappingBuilder;
 
 /**
  * Une personne physique.
  *
- * @property GenderField        $gender     Genre / sexe de la personne.
- * @property NameField[]        $name       Noms de la personne.
- * @property DateField[]        $date       Dates.
- * @property ContentField[]     $content    Contenus : présentation, biographie, travaux...
- * @property TopicField[]       $topic      Mots-clés.
- * @property AddressField[]     $address    Adresses postales.
- * @property PhoneField[]       $phone      Numéros de téléphone.
- * @property LinkField[]        $link       Liens.
- * @property PersonField[]      $person     Personnes liées.
- * @property NumberField[]      $number     Numéros officiels.
- * @property FigureField[]      $figure     Chiffres clés.
+ * @property Collection                 $gender     Genre / sexe de la personne.
+ * @property MultiFieldCollection       $name       Noms de la personne.
+ * @property TypedValueCollection       $date       Dates.
+ * @property TypedValueCollection       $content    Contenus : présentation, biographie, travaux...
+ * @property TopicCollection            $topic      Mots-clés.
+ * @property TypedValueCollection       $address    Adresses postales.
+ * @property TypedValueCollection       $phone      Numéros de téléphone.
+ * @property MultiFieldCollection       $link       Liens.
+ * @property TypedRelationCollection    $person     Personnes liées.
+ * @property TypedValueCollection       $number     Numéros officiels.
+ * @property TypedValueCollection       $figure     Chiffres clés.
  *
  * @author Daniel Ménard <daniel.menard@laposte.net>
  */
