@@ -91,31 +91,14 @@ class PersonEntity extends ContentEntity
 
         $builder->setProperty('stylesheet', 'docalist-people-edit-person');
 
-        $builder->addGroup(
-            __('Identité de la personne', 'docalist-people'),
-            'gender,name,date'
-        );
-        $builder->addGroup(
-            __('Présentation de la personne', 'docalist-people'),
-            'content,topic'
-        );
-        $builder->addGroup(
-            __('Coordonnées', 'docalist-people'),
-            'address,phone,link'
-        );
-        $builder->addGroup(
-            __('Relations', 'docalist-people'),
-            'person'
-        );
-        $builder->addGroup(
-            __('Numéros et chiffres clés', 'docalist-people'),
-            'number,figure'
-        );
-        $builder->addGroup(
-            __('Informations de gestion', 'docalist-people'),
-            'type,ref,source',
-            'collapsed'
-        );
+        $builder->addGroups([
+            __('Identité de la personne', 'docalist-people')        => 'gender,name,date',
+            __('Présentation de la personne', 'docalist-people')    => 'content,topic',
+            __('Coordonnées', 'docalist-people')                    => 'address,phone,link',
+            __('Relations', 'docalist-people')                      => 'person',
+            __('Numéros et chiffres clés', 'docalist-people')       => 'number,figure',
+            __('Informations de gestion', 'docalist-people')        => '-type,ref,source',
+        ]);
 
         $builder->setDefaultValues([
             'gender'        => 'unknown',
@@ -162,7 +145,7 @@ class PersonEntity extends ContentEntity
             ->addTemplate('date_*')->copyFrom('date')->copyDataTo('date');
 
         // Address
-        $mapping->addField('geoloc-hierarchy')->text('hierarchy')->setProperty('search_analyzer', 'keyword');
+            $mapping->addField('geoloc-hierarchy')->hierarchy();
 
         // Topic
         $mapping->addField('topic')->text()->filter()->suggest()
@@ -170,7 +153,7 @@ class PersonEntity extends ContentEntity
 
         // Crée un champ 'hierarchy' pour tous les topics qui sont associés à une table de type thesaurus
         foreach ($this->topic->getThesaurusTopics() as $topic) {
-            $mapping->addField("topic-$topic-hierarchy")->text('hierarchy')->setProperty('search_analyzer', 'keyword');
+            $mapping->addField("topic-$topic-hierarchy")->hierarchy();
         }
 
         // Ok
