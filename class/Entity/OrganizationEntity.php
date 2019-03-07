@@ -155,7 +155,7 @@ class OrganizationEntity extends ContentEntity
 
         // Crée un champ 'hierarchy' pour tous les topics qui sont associés à une table de type thesaurus
         foreach ($this->topic->getThesaurusTopics() as $topic) {
-            $mapping->addField("topic-$topic-hierarchy")->text('hierarchy')->setProperty('search_analyzer', 'keyword');
+            $mapping->addField("topic-$topic-hierarchy")->hierarchy();
         }
 
         // Organization
@@ -167,7 +167,7 @@ class OrganizationEntity extends ContentEntity
                 ->addTemplate('person-*')->copyFrom('person')->copyDataTo('person');
 
         // Address
-        $mapping->addField('geoloc-hierarchy')->text('hierarchy')->setProperty('search_analyzer', 'keyword');
+        $mapping->addField('geoloc-hierarchy')->hierarchy();
 
         // Phone
 
