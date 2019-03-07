@@ -28,6 +28,7 @@ use Docalist\People\Field\Organization\FigureField;
 use Docalist\Type\Collection\TypedValueCollection;
 use Docalist\Data\Type\Collection\TopicCollection;
 use Docalist\Type\Collection\MultiFieldCollection;
+use Docalist\Data\Type\Collection\TypedRelationCollection;
 
 use Docalist\Data\GridBuilder\EditGridBuilder;
 use Docalist\Search\MappingBuilder;
