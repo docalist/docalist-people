@@ -8,11 +8,11 @@
  * LICENSE file that was distributed with this source code.
  *
  * Plugin Name: Docalist People
- * Plugin URI:  http://docalist.org/
+ * Plugin URI:  https://docalist.org/
  * Description: Entités "organization", "place" et "person" pour docalist.
- * Version:     3.0.0
+ * Version:     3.0.1
  * Author:      Daniel Ménard
- * Author URI:  http://docalist.org/
+ * Author URI:  https://docalist.org/
  * Text Domain: docalist-people
  * Domain Path: /languages
  *
@@ -25,7 +25,7 @@ namespace Docalist\People;
 /**
  * Version du plugin.
  */
-define('DOCALIST_PEOPLE_VERSION', '3.0.0'); // Garder synchro avec la version indiquée dans l'entête
+define('DOCALIST_PEOPLE_VERSION', '3.0.1'); // Garder synchro avec la version indiquée dans l'entête
 
 /**
  * Path absolu du répertoire dans lequel le plugin est installé.
