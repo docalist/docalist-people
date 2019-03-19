@@ -66,7 +66,7 @@ class NameField extends MultiField
         return 'type';
     }
 
-    public function getAvailableFormats()
+    public function getAvailableFormats(): array
     {
         return [
             'f n (r)'   => __('Charlie Chaplin (pseudo)', 'docalist-people'),
@@ -111,7 +111,7 @@ class NameField extends MultiField
         return implode(' ', $t); // espace insécable
     }
 
-    public function filterEmpty($strict = true)
+    public function filterEmpty(bool $strict = true): bool
     {
         // Supprime les éléments vides
         $empty = parent::filterEmpty();
