@@ -29,7 +29,7 @@ use Docalist\Data\Type\TypedRelation;
  */
 class OrganizationField extends TypedRelation
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'name' => 'organization',

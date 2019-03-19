@@ -22,7 +22,7 @@ use Docalist\Data\Field\ContentField as BaseContentField;
  */
 class ContentField extends BaseContentField
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'label' => __('Présentation', 'docalist-people'),

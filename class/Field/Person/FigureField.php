@@ -22,7 +22,7 @@ use Docalist\Data\Field\FigureField as BaseFigureField;
  */
 class FigureField extends BaseFigureField
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'description' => __("Chiffres clés : score, classement, taille, poids...", 'docalist-people'),

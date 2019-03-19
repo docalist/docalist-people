@@ -29,7 +29,7 @@ use Docalist\Type\TypedText;
  */
 class NameField extends TypedText
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'name' => 'name',

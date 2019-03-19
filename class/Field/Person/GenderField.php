@@ -23,7 +23,7 @@ use Docalist\Type\TableEntry;
  */
 class GenderField extends TableEntry
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'name' => 'gender',

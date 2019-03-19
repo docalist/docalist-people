@@ -29,7 +29,7 @@ use Docalist\Data\Field\TopicField as BaseTopicField;
  */
 class TopicField extends BaseTopicField
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'description' => __('Mots-clés permettant de décrire et de classer la personne.', 'docalist-people'),

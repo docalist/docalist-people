@@ -55,7 +55,7 @@ class OrganizationEntity extends ContentEntity
     /**
      * {@inheritDoc}
      */
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'name' => 'organization',
@@ -80,7 +80,7 @@ class OrganizationEntity extends ContentEntity
     /**
      * {@inheritDoc}
      */
-    public function assign($value)
+    public function assign($value): void
     {
         // 06/02/19 - gère la compatibilité ascendante avec le site svb
         // dans svb, le champ "figure" s'appellait "figures"
@@ -89,7 +89,7 @@ class OrganizationEntity extends ContentEntity
             unset($value['figures']);
         }
 
-        return parent::assign($value);
+        parent::assign($value);
     }
 
     /**

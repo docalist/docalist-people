@@ -32,7 +32,7 @@ use Docalist\Type\TableEntry;
  */
 class NameField extends MultiField
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'name' => 'name',

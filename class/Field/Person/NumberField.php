@@ -22,7 +22,7 @@ use Docalist\Data\Field\NumberField as BaseNumberField;
  */
 class NumberField extends BaseNumberField
 {
-    public static function loadSchema()
+    public static function loadSchema(): array
     {
         return [
             'description' => __('Numéros et codes de la personne', 'docalist-people'),
