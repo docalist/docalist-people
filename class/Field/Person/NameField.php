@@ -61,9 +61,9 @@ class NameField extends MultiField
         ];
     }
 
-    protected function getCategoryField(): string
+    protected function getCategoryField(): TableEntry
     {
-        return 'type';
+        return $this->type;
     }
 
     public function getAvailableFormats(): array
