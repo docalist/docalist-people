@@ -61,7 +61,7 @@ class NameField extends MultiField
         ];
     }
 
-    protected function getCategoryField()
+    protected function getCategoryField(): string
     {
         return 'type';
     }
